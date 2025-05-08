@@ -59,7 +59,7 @@ namespace ADO.net
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand(procedureName, connection)) {
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@{parameterName}", inputName);
+                command.Parameters.AddWithValue($"@{parameterName}", inputName);
 
                 connection.Open();
                 using (SqlDataReader reader  = command.ExecuteReader()) {
